@@ -1,3 +1,6 @@
+$colorInputBackground :  #f8ebb4;   //master: #fffff0
+$colorInputBorder : #FFE86F;        //master: #e5dfa1
+
 .mainContainer {
 
     display: flex;
@@ -45,7 +48,8 @@
 .loginHead p {
 
     padding: 0;
-    font-size: 28px;
+    margin: 0;
+    font-size: 30px;
     color: #016db6;
 }
 
@@ -55,19 +59,21 @@
     flex-direction: column;
     margin-top: 10px;
     // border: 1px solid red;
-
 }
 
 .loginDatos input {
 
-    background-color: #f8ebb4;
-    border: 2px solid #FFE86F;
+    background-color: $colorInputBackground;
+    border: 2px solid $colorInputBorder;
     border-radius: 5px;
 }
 
-.loginDatos:focus-visible {
-
-    background-color: black;
+.loginDatos input:focus {
+    
+    background-color: lighten($colorInputBackground, 2%);
+    border-color: $colorInputBorder !important;
+    outline: none;
+    box-shadow: 0 0 10px 2px $colorInputBackground;
 }
 
 .loginContainer button {
