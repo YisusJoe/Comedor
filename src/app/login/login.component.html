@@ -1,5 +1,5 @@
 <div class="mainContainer">
-    <form class="loginContainer">
+    <form class="loginContainer" #loginForm = "ngForm" (ngSubmit)="iniciarSecion(loginForm)">
 
         <div class="loginHead" style="border-bottom: 1px solid black;">
             <div>
@@ -12,15 +12,15 @@
         <div class="loginDatos">
             <div>
                 <label>RFC:</label>
-                <input type="text" required style="padding-left: 10px;">
+                <input type="text" name="rfcInput" required style="padding-left: 10px;" ngModel>
             </div>
             <div>
                 <label>CONTRASEÑA:</label>
-                <input type="password" required style="padding-left: 10px;">
+                <input type="password" name="passInput" required style="padding-left: 10px;" ngModel>
             </div>
         </div>
         <div>
-            <button class="btn btn-primary">Iniciar Seción</button>
+            <button type="submit" class="btn btn-primary">Iniciar Seción</button>
         </div>
 
     </form>
