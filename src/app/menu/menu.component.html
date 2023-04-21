@@ -12,12 +12,13 @@
         </div>
     
         <div class="item left empleado">
-            Nombre de usuario - Rol de usuario
+            {{empleado["data"]["nom_usuario"] | uppercase}} - {{empleado["data"]["nom_rol"] | uppercase}}
+            <!-- Nombre de usuario - Rol de usuario -->
         </div>
     
         <div class="item icons">
     
-            <button type="button" title="Salir" style="border-radius:3px;background:#E8E7E7;border:none;padding:5px;">
+            <button type="button" title="Salir" (click)="salir()" style="border-radius:3px;background:#E8E7E7;border:none;padding:5px;">
                 <img src="../../assets/images/power.png">
             </button>
         </div>
@@ -25,47 +26,23 @@
     <!-- ################################################## -->
 
     <!-- MENU VERTICAL -->
-    <!-- <div class="menu-vertical" style="border: 1px solid ridge">
+    <div class="menu-vertical" style="border: 1px solid ridge">
         <div class="container" style="padding: 0">
+            
             <div class="title" style="white-space: nowrap; font-size: 12px; font-family: Arial, Helvetica, sans-serif; display: flex; align-items: center;justify-content: center;">Menú de Módulos </div>
-            <div class="item" align="center" style="width: 100%;" ng-repeat="modulo in menu.empleado.modulos" ng-click="menu.cambiarModulo(modulo)">
-                <div class="image">
-                  <img src="./app/assets/images/{{modulo.nom_imagen}}">
-                  <img src="../../assets/images/documento.png">
-                  <br>
-                  <label align="center">{{modulo.nom_modulo}}</label>
-                  <label align="center" style="color:black;font-size: 12px;font-weight: bold;">Catálogos</label>
-                </div>
-            </div>
-            <div class="item" align="center" style="width: 100%;" ng-repeat="modulo in menu.empleado.modulos" ng-click="menu.cambiarModulo(modulo)">
-                <div class="image">
-                  <img src="./app/assets/images/{{modulo.nom_imagen}}">
-                  <img src="../../assets/images/configuracion.png">
-                  <br>
-                  <label align="center">{{modulo.nom_modulo}}</label>
-                  <label align="center" style="color:black;font-size: 12px;font-weight: bold;">Configuración</label>
-                </div>
-            </div>
-            <div class="item" align="center" style="width: 100%;" ng-repeat="modulo in menu.empleado.modulos" ng-click="menu.cambiarModulo(modulo)">
-                <div class="image">
-                  <img src="./app/assets/images/{{modulo.nom_imagen}}">
-                  <img src="../../assets/images/cajero.png">
-                  <br>
-                  <label align="center">{{modulo.nom_modulo}}</label>
-                  <label align="center" style="color:black;font-size: 12px;font-weight: bold;">Operación</label>
-                </div>
-            </div>
-            <div class="item" align="center" style="width: 100%;" ng-repeat="modulo in menu.empleado.modulos" ng-click="menu.cambiarModulo(modulo)">
-                <div class="image">
-                  <img src="./app/assets/images/{{modulo.nom_imagen}}">
-                  <img src="../../assets/images/reportes.png">
-                  <br>
-                  <label align="center">{{modulo.nom_modulo}}</label>
-                  <label align="center" style="color:black;font-size: 12px;font-weight: bold;">Reportes</label>
+            
+            <div *ngFor="let caracteristica of empleado['data']['opcionesMenu']; index as i">
+                <!-- <div class="item" align="center" style="width: 100%;" ng-repeat="modulo in menu.empleado.modulos" ng-click="menu.cambiarModulo(modulo)"> -->
+                <div class="item" align="center" style="width: 100%;" *ngIf="i > 2">
+                    <div class="image">
+                      <img src="../../assets/images/{{empleado['data']['opcionesMenu'][i]['nom_imagen']}}">
+                      <br>
+                      <label align="center" style="color:black;font-size: 12px;font-weight: bold;">{{empleado['data']['opcionesMenu'][i]['nom_modulo']}}</label>
+                    </div>
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
     <!-- ################################################## -->
     
 </div>

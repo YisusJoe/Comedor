@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { IndexComponent } from './index/index.component';
 import { MenuComponent } from './menu/menu.component';
 import { RouterModule,Routes } from '@angular/router';
+import { DBService } from './db.service';
 
 const appRoutes:Routes = [
 
@@ -29,7 +30,7 @@ const appRoutes:Routes = [
     FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [DBService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

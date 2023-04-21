@@ -1,0 +1,25 @@
+.contentFull {
+
+    display: grid;  
+    height: 100vh;
+    grid-template-columns: 138px 1fr;
+    grid-template-rows: 40px 1fr;
+}
+
+app-menu {
+
+    grid-row-start: 0;
+    grid-row-end: 1; 
+}
+
+app-index {
+
+    grid-row-start: 2;
+    grid-row-end: 4;    
+    grid-column-start: 2;
+
+    padding: 4% 0 0 8%;
+    background-color: #e8e7e7;
+}
+
+
