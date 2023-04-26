@@ -9,6 +9,8 @@ import { IndexComponent } from './index/index.component';
 import { MenuComponent } from './menu/menu.component';
 import { RouterModule,Routes } from '@angular/router';
 import { DBService } from './db.service';
+import { HttpClientModule } from '@angular/common/http';
+import { ServicioApiService } from './modules/services/servicio-api.service';
 
 const appRoutes:Routes = [
 
@@ -28,9 +30,12 @@ const appRoutes:Routes = [
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    // AGREGUE ESTA LINEA PARA QUE FUNCIONARA LO DE JUVE
+    HttpClientModule
   ],
-  providers: [DBService],
+  // SERVICIO DE PRUEBA TAMBIEN PARA QUE FUNCIONE
+  providers: [DBService, ServicioApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

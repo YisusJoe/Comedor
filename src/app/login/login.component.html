@@ -1,4 +1,5 @@
 <div class="mainContainer">
+    
     <form class="loginContainer" #loginForm = "ngForm" (ngSubmit)="iniciarSecion(loginForm)">
 
         <div class="loginHead" style="border-bottom: 1px solid black;">
@@ -12,11 +13,11 @@
         <div class="loginDatos">
             <div>
                 <label>RFC:</label>
-                <input type="text" name="rfcInput" required style="padding-left: 10px;" ngModel>
+                <input type="text" name="rfcInput" required required-message="'No se captur&oacute; el RFC.'" placeholder="Ingrese RFC de Proveedor" maxlength="13" autocomplete="off" style="padding-left: 10px;" ngModel>
             </div>
             <div>
                 <label>CONTRASEÑA:</label>
-                <input type="password" name="passInput" required style="padding-left: 10px;" ngModel>
+                <input type="password" name="passInput" required required-message="'No se captur&oacute; la contrase&ntilde;a.'" placeholder="Ingrese contrase&ntilde;a de Proveedor" maxlength="50" autocomplete="off" style="padding-left: 10px;" ngModel>
             </div>
         </div>
         <div>

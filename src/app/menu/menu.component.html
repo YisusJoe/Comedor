@@ -29,15 +29,20 @@
     <div class="menu-vertical" style="border: 1px solid ridge">
         <div class="container" style="padding: 0">
             
-            <div class="title" style="white-space: nowrap; font-size: 12px; font-family: Arial, Helvetica, sans-serif; display: flex; align-items: center;justify-content: center;">Menú de Módulos </div>
+            <div class="title" style="white-space: nowrap; font-size: 12px; font-family: Arial, Helvetica, sans-serif; display: flex; align-items: center;justify-content: center;">
+                Menú de Módulos 
+            </div>
             
-            <div *ngFor="let caracteristica of empleado['data']['opcionesMenu']; index as i">
+            <div *ngFor="let caracteristica of datosStorage['response']; index as i">
                 <!-- <div class="item" align="center" style="width: 100%;" ng-repeat="modulo in menu.empleado.modulos" ng-click="menu.cambiarModulo(modulo)"> -->
                 <div class="item" align="center" style="width: 100%;" *ngIf="i > 2">
                     <div class="image">
-                      <img src="../../assets/images/{{empleado['data']['opcionesMenu'][i]['nom_imagen']}}">
+                      <!-- <img src="../../assets/images/{{empleado['data']['opcionesMenu'][i]['nom_imagen']}}"> -->
+                      <img src="../../assets/images/{{datosStorage['response'][i]['nom_imagen']}}">
                       <br>
-                      <label align="center" style="color:black;font-size: 12px;font-weight: bold;">{{empleado['data']['opcionesMenu'][i]['nom_modulo']}}</label>
+                      <br>
+                      <!-- <label align="center" style="color:black;font-size: 12px;font-weight: bold;">{{empleado['data']['opcionesMenu'][i]['nom_modulo']}}</label> -->
+                      <label align="center" style="color:black;font-size: 12px;font-weight: bold;">{{datosStorage['response'][i]['nom_modulo']}}</label>
                     </div>
                 </div>
             </div>
