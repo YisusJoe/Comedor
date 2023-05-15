@@ -1,0 +1,49 @@
+@media screen and (max-width: 1600px)  {
+    .ui.menu .item.empleado {
+        font-size: 10px;
+    }
+    .ui.menu .item.empresa {
+        font-size: 12px;
+    }
+    .ui.menu .item button {
+        font-size: 10px !important;
+    }
+    .ui.segment {
+        font-size: 10px !important;
+    }
+    .ui.table th,
+    td {
+        font-size: 10px !important;
+    }
+    input,
+    select,
+    textarea {
+        height: 24px !important;
+        font-size: 9px !important;
+    }
+    select {
+        padding: 1px !important;
+        font-size: 9px !important;
+    }
+}
+
+@media screen and (max-width: 1170px) {
+    .ui.menu .item.icons {
+        display: none;
+    }
+    .ui.menu .item.empleado {
+        display: none !important;
+    }
+    .ui.menu .item.dpdown {
+        display: flex;
+        margin-left: auto!important;
+    }
+
+
+}
+
+@media screen and (max-width: 1470px) {
+    label.right{
+        font-size: 10px !important;
+    }
+}

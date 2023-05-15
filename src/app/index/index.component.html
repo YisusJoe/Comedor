@@ -1,6 +1,28 @@
-<div *ngFor="let datos of dataDB['data']['opcionesMenu']" style="color: black">
+<!-- <div *ngFor="let datos of dataDB['data']['opcionesMenu']" style="color: black">
 
     <div style="height: 10px; width: 10px; background-color: red;"></div>
     <p>{{datos}}</p>
 
+</div> -->
+
+<div class="containerOptions">
+    
+    <div *ngFor="let opcion of menu.empleado.response; index as i">
+
+        <div class="optionSingle" *ngIf="menu.empleado.response[i].idu_modulo == idu_modulo">
+            
+            <div>
+                <div class="containerImg">
+                    <img src="../../assets/images/{{menu.empleado.response[i].nom_imagen_opcion}}" alt="">
+                </div>
+                <div class="nameCard">{{menu.empleado.response[i].nom_opcion}}</div>
+            </div>
+        </div>
+    </div>
+    <!-- <div *ngFor="let opcion of menu.empleado.response; index as i">
+    
+        <div style="height: 10px; width: 10px; background-color: red;margin: 10px;"></div>
+        <p>{{datos}}</p>
+    
+    </div> -->
 </div>

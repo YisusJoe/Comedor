@@ -11,6 +11,7 @@ import { RouterModule,Routes } from '@angular/router';
 import { DBService } from './db.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ServicioApiService } from './modules/services/servicio-api.service';
+import { CreateSessionService } from './create-session.service';
 
 const appRoutes:Routes = [
 
@@ -35,7 +36,7 @@ const appRoutes:Routes = [
     HttpClientModule
   ],
   // SERVICIO DE PRUEBA TAMBIEN PARA QUE FUNCIONE
-  providers: [DBService, ServicioApiService],
+  providers: [DBService, ServicioApiService, CreateSessionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

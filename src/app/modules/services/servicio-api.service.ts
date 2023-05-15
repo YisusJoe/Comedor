@@ -28,7 +28,8 @@ export class ServicioApiService implements OnInit {
     // console.log(datos.params)
     // alert(datos.params)
     return this.http
-    .post('http://localhost:8080/apicomedorcoppel/' + datos.uri, datos.params)
+    .post('http://10.27.113.36/diseno/apicomedorcoppel/' + datos.uri, datos.params)
+    // .post('http://localhost:8080/apicomedorcoppel/' + datos.uri, datos.params)
     // .post('http://localhost:8080/apicomedorcoppel' + datos.uri, datos.params)
     .pipe(
       map(({ data }: any) => data),

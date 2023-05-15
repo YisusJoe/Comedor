@@ -14,11 +14,11 @@ app-menu {
 
 app-index {
 
-    grid-row-start: 2;
-    grid-row-end: 4;    
+    grid-row-start: 2;  
     grid-column-start: 2;
 
-    padding: 4% 0 0 8%;
+    // padding: 4% 0 0 8%; Quite este pues me movia el componente completamente 
+
     background-color: #e8e7e7;
 }
 

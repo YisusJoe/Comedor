@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ServicioApiService } from '../modules/services/servicio-api.service';
+import { CreateSessionService } from '../create-session.service';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,7 @@ import { ServicioApiService } from '../modules/services/servicio-api.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private router:Router, private servicioApi:ServicioApiService){}
+  constructor(private router:Router, private servicioApi:ServicioApiService, private create:CreateSessionService){}
 
   ngOnInit(): void {}
 
@@ -48,6 +49,7 @@ export class LoginComponent implements OnInit {
           this.servicioApi.consumirServicio(datos).subscribe({
             next: (data:any) => {
               
+              this.create.getSession(JSON.stringify(data))
               localStorage.setItem('SESSION', JSON.stringify(data));
               this.router.navigate(['index']);
             },

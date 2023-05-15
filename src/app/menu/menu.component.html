@@ -12,7 +12,8 @@
         </div>
     
         <div class="item left empleado">
-            {{empleado["data"]["nom_usuario"] | uppercase}} - {{empleado["data"]["nom_rol"] | uppercase}}
+            <!-- {{empleado["data"]["nom_usuario"] | uppercase}} - {{empleado["data"]["nom_rol"] | uppercase}} -->
+            {{this.menu.empleado[0].nom_usuario | uppercase}} - {{this.menu.empleado[0].nom_rol | uppercase}}
             <!-- Nombre de usuario - Rol de usuario -->
         </div>
     
@@ -33,16 +34,18 @@
                 Menú de Módulos 
             </div>
             
-            <div *ngFor="let caracteristica of datosStorage['response']; index as i">
+            <div *ngFor="let caracteristica of menu.empleado; index as i">
                 <!-- <div class="item" align="center" style="width: 100%;" ng-repeat="modulo in menu.empleado.modulos" ng-click="menu.cambiarModulo(modulo)"> -->
-                <div class="item" align="center" style="width: 100%;" *ngIf="i > 2">
+                <div class="item" align="center" style="width: 100%;" *ngIf="i > 2" (click) = "cambiarModulo(caracteristica)">
                     <div class="image">
                       <!-- <img src="../../assets/images/{{empleado['data']['opcionesMenu'][i]['nom_imagen']}}"> -->
-                      <img src="../../assets/images/{{datosStorage['response'][i]['nom_imagen']}}">
+                      <!-- <img src="../../assets/images/{{datosStorage['response'][i]['nom_imagen']}}"> -->
+                      <img src="../../assets/images/{{menu.empleado[i].nom_imagen}}">
                       <br>
                       <br>
                       <!-- <label align="center" style="color:black;font-size: 12px;font-weight: bold;">{{empleado['data']['opcionesMenu'][i]['nom_modulo']}}</label> -->
-                      <label align="center" style="color:black;font-size: 12px;font-weight: bold;">{{datosStorage['response'][i]['nom_modulo']}}</label>
+                      <!-- <label align="center" style="color:black;font-size: 12px;font-weight: bold;">{{datosStorage['response'][i]['nom_modulo']}}</label> -->
+                      <label align="center" style="color:black;font-size: 12px;font-weight: bold;">{{menu.empleado[i].nom_modulo}}</label>
                     </div>
                 </div>
             </div>
